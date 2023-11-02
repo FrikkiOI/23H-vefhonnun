@@ -1,0 +1,9 @@
+:root {
+    --bodyColor: rgb(8, 7, 66);
+    --bodyFont: 'Plaifair', 'serif';
+    --bodyBg: linear-gradient(62deg, rgb(172, 203, 231), rgb(180, 231, 132));
+    --a: rgb(13, 11, 130);
+    --visited: rgb(33, 30, 181);
+    --hover: rgb(33, 30, 181);
+    --buttonPrimary: 
+}
