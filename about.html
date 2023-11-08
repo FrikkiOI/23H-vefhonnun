@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us - Samsung</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: #fff;
+            margin: 0;
+            margin-top: 65px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            transition: background-color 0.5s;
+        }
+
+        .header {
+            text-align: center;
+            font-size: 2rem;
+            margin: 0;
+            background-color: #333;
+            padding: 10px 0;
+            width: 100%;
+            position: fixed;
+            top: 0;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            background-color: #333;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translateY(-50%);
+        }
+
+        .sidebar-button {
+            background-color: #111;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            margin: 10px 0;
+            width: 120px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleUp {
+            from {
+                transform: scale(0.8);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                right: -200px;
+            }
+            to {
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product {
+                width: 100%;
+            }
+
+            .cart-container {
+                top: 10px;
+                right: 10px;
+            }
+
+            .sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">About Us</div>
+    <div class="container">
+        <h2>About Us</h2>
+        <p>Welcome to our online store! We are dedicated to providing you with the latest Samsung phones at the best prices.</p>
+    </div>
+</body>
+</html>
