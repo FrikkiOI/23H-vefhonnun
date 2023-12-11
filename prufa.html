@@ -1,286 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="is">
 <head>
-    <title>Samsung</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #222;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            transition: background-color 0.5s;
-        }
-
-        .header {
-            text-align: center;
-            font-size: 2rem;
-            margin: 0;
-            background-color: #333;
-            padding: 10px 0;
-            width: 100%;
-            position: fixed;
-            top: 0;
-        }
-
-        .sidebar {
-            position: fixed;
-            left: 0;
-            top: 50%;
-            background-color: #333;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transform: translateY(-50%);
-        }
-
-        .sidebar-button {
-            background-color: #111;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            cursor: pointer;
-            margin: 10px 0;
-            width: 120px;
-        }
-
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            max-width: 800px;
-            margin-top: 850px;
-        }
-
-        .product {
-            border: 1px solid #444;
-            background-color: #333;
-            border-radius: 10px;
-            padding: 20px;
-            width: 250px;
-            text-align: center;
-            margin: 10px;
-            animation: fadeIn 1s;
-            transition: background-color 0.2s;
-        }
-
-        .product img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .product:hover {
-            background-color: #222;
-        }
-
-        .add-to-cart {
-            background-color: #111;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 5px 10px;
-            cursor: pointer;
-            transition: background-color 0.2s, transform 0.2s;
-            animation: scaleUp 0.5s;
-        }
-
-        .add-to-cart:hover {
-            background-color: #000;
-            transform: scale(1.1);
-        }
-
-        .cart-container {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            animation: slideInRight 1s 0.5s;
-        }
-
-        .cart-dropdown {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background-color: #333;
-            border: 1px solid #444;
-            border-radius: 5px;
-            max-height: 200px;
-            overflow-y: auto;
-            padding: 10px;
-        }
-
-        .cart-container:hover .cart-dropdown {
-            display: block;
-        }
-
-        .cart-button {
-            background-color: #111;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-
-        .cart-button:hover {
-            background-color: #000;
-        }
-
-        .cart h2 {
-            text-align: center;
-            font-size: 1.2rem;
-            margin: 0;
-        }
-
-        .cart-items {
-            list-style: none;
-            padding: 0;
-            margin-top: 10px;
-            width: 100%;
-        }
-
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 5px 0;
-            padding: 10px;
-            border: 1px solid #444;
-            border-radius: 5px;
-            background-color: #333;
-        }
-
-        .remove-from-cart {
-            background-color: #e74c3c;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 5px 10px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .remove-from-cart:hover {
-            background-color: #c64131;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes scaleUp {
-            from {
-                transform: scale(0.8);
-            }
-            to {
-                transform: scale(1);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                right: -200px;
-            }
-            to {
-                right: 20px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .product {
-                width: 100%;
-            }
-
-            .cart-container {
-                top: 10px;
-                right: 10px;
-            }
-
-            .sidebar {
-                display: none;
-            }
-        }
-    </style>
+    <title>Samsung</title>
+    <link rel="stylesheet" type="text/css" href="prufa.css" />
 </head>
 <body>
-    <div class="header">SAMSUNG</div>
-    <div class="sidebar">
-        <button class="sidebar-button" onclick="window.location.href = 'about.html'">About Us</button>
-        <button class="sidebar-button" onclick="window.location.href = 'info.html'">Info</button>
+    <div class="navbar">
+        <a href="#" class="navbar-logo">SAMSUNG</a>
+        <div class="navbar-toggle" onclick="toggleNavbar()">☰</div>
+        <ul class="navbar-menu">
+            <li class="navbar-item"><a href="#" class="navbar-item">Home</a></li>
+            <li class="navbar-item"><a href="about.html" class="navbar-item">About Us</a></li>
+            <li class="navbar-item"><a href="info.html" class="navbar-item">Info</a></li>
+        </ul>
     </div>
+    <div class="header">SAMSUNG</div>
     <div class="cart-container">
-        <button class="cart-button">Shopping Cart</button>
+        <button class="cart-button">Karfa</button>
         <div class="cart-dropdown">
-            <h2>Shopping Cart</h2>
+            <h2>Karfa</h2>
             <ul class="cart-items" id="cart-items">
             </ul>
-            <p>Total: $<span id="cart-total">0.00</span></p>
+            <p>Samtals: $<span id="cart-total">0.00</span></p>
+            <button class="checkout-button" onclick="checkout()">Panta</button>
         </div>
     </div>
     <div class="container">
-        <!-- Products -->
+        <!-- Vörur -->
         <div class="product">
             <img src="189030_2023.png" alt="Samsung Galaxy Z Flip 5">
             <h2>Samsung Galaxy Z Flip 5</h2>
-            <p>Price: $999.99</p>
-            <button class="add-to-cart" onclick="addToCart('Samsung Galaxy Z Flip 5', 999.99)">Add to Cart</button>
+            <p>Verð: $999.99</p>
+            <button class="add-to-cart" onclick="addToCart('Samsung Galaxy Z Flip 5', 999.99)">Bæta í körfu</button>
         </div>
         <div class="product">
             <img src="187395_2023.png" alt="Samsung Galaxy A54 5G">
             <h2>Samsung Galaxy A54 5G</h2>
-            <p>Price: $449.99</p>
-            <button class="add-to-cart" onclick="addToCart('Samsung Galaxy A54 5G', 449.99)">Add to Cart</button>
+            <p>Verð: $449.99</p>
+            <button class="add-to-cart" onclick="addToCart('Samsung Galaxy A54 5G', 449.99)">Bæta í körfu</button>
         </div>
         
         <div class="product">
             <img src="190175_2023.png" alt="Samsung Galaxy S21 FE">
             <h2>Samsung Galaxy S21 FE</h2>
-            <p>Price: $689.99</p>
-            <button class="add-to-cart" onclick="addToCart('Samsung Galaxy S21 FE', 689.99)">Add to Cart</button>
+            <p>Verð: $689.99</p>
+            <button class="add-to-cart" onclick="addToCart('Samsung Galaxy S21 FE', 689.99)">Bæta í körfu</button>
         </div>
         
         <div class="product">
             <img src="189038_2023.png" alt="Samsung Galaxy Z Fold 5">
             <h2>Samsung Galaxy Z Fold 5</h2>
-            <p>Price: $1799.99</p>
-            <button class="add-to-cart" onclick="addToCart('Samsung Galaxy Z Fold 5', 1799.99)">Add to Cart</button>
+            <p>Verð: $1799.99</p>
+            <button class="add-to-cart" onclick="addToCart('Samsung Galaxy Z Fold 5', 1799.99)">Bæta í körfu</button>
         </div>
         
         <div class="product">
             <img src="186720_1 Background Removed.png" alt="Samsung Galaxy A21s">
             <h2>Samsung Galaxy A21s</h2>
-            <p>Price: $199.00</p>
-            <button class="add-to-cart" onclick="addToCart('Samsung Galaxy A21s', 199.00)">Add to Cart</button>
+            <p>Verð: $199.00</p>
+            <button class="add-to-cart" onclick="addToCart('Samsung Galaxy A21s', 199.00)">Bæta í körfu</button>
         </div>
         
         <div class="product">
             <img src="dm3_s23_ultra_phantomblack_2023_2_2 Background Removed.png" alt="Samsung Galaxy S23 Ultra">
             <h2>Samsung Galaxy S23 Ultra</h2>
-            <p>Price: $1199.99</p>
-            <button class="add-to-cart" onclick="addToCart('Samsung Galaxy S23 Ultra', 1199.99)">Add to Cart</button>
+            <p>Verð: $1199.99</p>
+            <button class="add-to-cart" onclick="addToCart('Samsung Galaxy S23 Ultra', 1199.99)">Bæta í körfu</button>
         </div>
-    </div>
+		</div>
+    <!-- Dagskrártafla -->
+    <table class="schedule-table">
+        <thead>
+            <tr>
+                <th>Tími</th>
+                <th>Viðburður</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>10:00 F.H.</td>
+                <td>Skráning</td>
+            </tr>
+            <tr>
+                <td>11:00 F.H.</td>
+                <td>Opnunarkerfisræða</td>
+            </tr>
+        </tbody>
+        <form id="registration-form" style="max-width: 200px; margin-top: 20px;">
+            <h2 style="text-align: center; color: #fff;">Skráning</h2>
+            <label for="name" style="color: #fff;">Nafn:</label>
+            <input type="text" id="name" name="name" required style="width: 20%; padding: 8px; margin-bottom: 10px;">
 
+            <label for="email" style="color: #fff;">Netfang:</label>
+            <input type="email" id="email" name="email" required style="width: 20%; padding: 8px; margin-bottom: 10px;">
+
+            <button type="submit" style="background-color: #4CAF50; color: #fff; border: none; border-radius: 5px; padding: 10px 20px; cursor: pointer;">Senda</button>
+        </form>
+    </table>
     <script>
+        
+        function toggleNavbar() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
+        }
         const cart = [];
 
         function addToCart(productName, price) {
@@ -306,13 +130,39 @@
                 li.classList.add("cart-item");
                 li.innerHTML = `
                     <span>${item.productName} - $${item.price.toFixed(2)}</span>
-                    <button class="remove-from-cart" onclick="removeFromCart(${i})">Remove</button>
+                    <button class="remove-from-cart" onclick="removeFromCart(${i})">Fjarlægja</button>
                 `;
                 cartItems.appendChild(li);
                 total += item.price;
             }
 
             cartTotal.textContent = total.toFixed(2);
+        }
+
+        function checkout() {
+            alert("Greiðslufall ekki uppsett enn.");
+        }
+
+        function toggleChat() {
+        const chatBox = document.getElementById("chat-box");
+        chatBox.style.display = chatBox.style.display === "none" ? "block" : "none";
+    }
+
+    function sendMessage() {
+        const messageInput = document.getElementById("message-input");
+        const chatMessages = document.getElementById("chat-messages");
+
+        const message = messageInput.value.trim();
+        if (message !== "") {
+            const messageElement = document.createElement("div");
+            messageElement.textContent = message;
+            chatMessages.appendChild(messageElement);
+            messageInput.value = "";
+        }
+    }
+        function toggleNavbar() {
+            const navbarMenu = document.querySelector('.navbar-menu');
+            navbarMenu.classList.toggle('active');
         }
     </script>
 </body>
