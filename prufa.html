@@ -16,10 +16,15 @@
         <a href="#" class="navbar-logo">SAMSUNG</a>
         <div class="navbar-toggle" onclick="toggleNavbar()">☰</div>
         <ul class="navbar-menu">
-            <li class="navbar-item"><a href="#" class="navbar-item">Home</a></li>
-            <li class="navbar-item"><a href="about.html" class="navbar-item">About Us</a></li>
-            <li class="navbar-item"><a href="info.html" class="navbar-item">Info</a></li>
+            <!-- The rest of your navbar items -->
         </ul>
+    </div>
+    <div class="dropdown">
+        <select onchange="window.location.href=this.value">
+            <option value="">Menu</option>
+            <option value="file:///Users/frikkiingason/23H-vefhonnun/23H-vefhonnun/23H-vefhonnun/about.html">About us</option>
+            <option value="file:///Users/frikkiingason/23H-vefhonnun/23H-vefhonnun/23H-vefhonnun/info.html">Info</option>
+        </select>
     </div>
     <div class="header">SAMSUNG</div>
     <div class="cart-container">
@@ -189,10 +194,6 @@
             messageInput.value = "";
         }
     }
-        function toggleNavbar() {
-            const navbarMenu = document.querySelector('.navbar-menu');
-            navbarMenu.classList.toggle('active');
-        }
             document.addEventListener("DOMContentLoaded", function () {
         const splashScreen = document.getElementById("splash-screen");
 

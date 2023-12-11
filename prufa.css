@@ -276,28 +276,6 @@ scroll-behavior: smooth;
 .navbar-item {
     margin: 0 15px;
 }
-
-.dropdown {
-    display: none;
-    position: absolute;
-    background-color: #333;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    border-radius: 5px;
-    padding: 10px;
-    z-index: 1;
-}
-
-.navbar-item:hover .dropdown {
-    display: block;
-}
-
-.dropdown-item {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-}
-
 @media (max-width: 768px) {
     .navbar-menu {
         display: none;
@@ -460,7 +438,7 @@ scroll-behavior: smooth;
 }
 
 .chat-header {
-    background-color: #3498db;
+    background-color: #10202a;
     color: #fff;
     padding: 10px;
     cursor: pointer;
@@ -486,11 +464,25 @@ scroll-behavior: smooth;
 }
 
 .chat-input button {
-    background-color: #3498db;
+    background-color: #041927;
     color: #fff;
     border: none;
     padding: 8px 15px;
     border-radius: 5px;
     cursor: pointer;
 }
+.dropdown {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 30px;
+    margin-left: 30px;
+}
 
+.dropdown select {
+    background-color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+}
