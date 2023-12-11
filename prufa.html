@@ -7,6 +7,11 @@
     <link rel="stylesheet" type="text/css" href="prufa.css" />
 </head>
 <body>
+    <div class="splash-screen" id="splash-screen">
+        <div class="splash-content">
+            <h1>Welcome to Samsung</h1>
+        </div>
+    </div>
     <div class="navbar">
         <a href="#" class="navbar-logo">SAMSUNG</a>
         <div class="navbar-toggle" onclick="toggleNavbar()">☰</div>
@@ -68,6 +73,30 @@
             <h2>Samsung Galaxy S23 Ultra</h2>
             <p>Verð: $1199.99</p>
             <button class="add-to-cart" onclick="addToCart('Samsung Galaxy S23 Ultra', 1199.99)">Bæta í körfu</button>
+        </div>
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <img src="187395_2023.png" alt="Slide 1">
+            </div>
+            <div class="mySlides">
+                <img src="189038_2023.png" alt="Slide 2">
+            </div>
+            <div class="mySlides">
+                <img src="190175_2023.png" alt="Slide 3">
+            </div>
+        </div>
+        <div class="scroll-to-top" onclick="scrollToTop()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.41 14.24L5.66 8.34a7.963 7.963 0 0 1 12.1 0l-5.93 7.9z"/>
+            </svg>
+        </div>
+        <div id="chat-box" class="chat-box">
+            <div class="chat-header" onclick="toggleChat()">Chat</div>
+            <div class="chat-messages" id="chat-messages"></div>
+            <div class="chat-input">
+                <input type="text" id="message-input" placeholder="Type a message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
         </div>
 		</div>
     <!-- Dagskrártafla -->
@@ -164,6 +193,46 @@
             const navbarMenu = document.querySelector('.navbar-menu');
             navbarMenu.classList.toggle('active');
         }
+            document.addEventListener("DOMContentLoaded", function () {
+        const splashScreen = document.getElementById("splash-screen");
+
+        setTimeout(function () {
+            splashScreen.classList.add("fade-out");
+        }, 3000);
+    });
+        document.addEventListener("DOMContentLoaded", function () {
+
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            const slides = document.getElementsByClassName("mySlides");
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+
+            setTimeout(showSlides, 2200);
+        }
+    });
+        function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+    function toggleChat() {
+        const chatBox = document.getElementById("chat-box");
+        chatBox.style.transform = chatBox.style.transform === "translateX(100%)" ? "translateX(0)" : "translateX(100%)";
+    }
     </script>
 </body>
 </html>
